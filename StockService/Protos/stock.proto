@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "StockService";
+
+package stocks;
+
+// The greeting service definition.
+service Stocks {
+  // Sends a greeting
+  rpc GetStock (StockRequest) returns (StockReply);
+}
+
+// The request message containing the user's name.
+message StockRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message StockReply {
+  string name = 1;
+  int32 value = 2;
+}

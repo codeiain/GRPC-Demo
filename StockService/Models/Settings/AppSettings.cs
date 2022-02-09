@@ -1,0 +1,8 @@
+
+namespace StockService.Models.Settings
+{
+    public class AppSettings
+    {
+        // Add any App Settings we need
+    }
+}

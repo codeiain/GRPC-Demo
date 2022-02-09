@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "WeatherService";
+
+package weather;
+
+import "google/protobuf/timestamp.proto";
+
+
+service Weather {
+  rpc GetWeather (WeatherRequest) returns (WeatherReply);
+}
+
+message WeatherRequest{
+  string Location =1;
+}
+
+message WeatherReply {
+  google.protobuf.Timestamp Date = 1;
+  int32 TemperatureC = 2 ;
+  int32 TemperatureF = 3;
+  string Summary = 4 ;
+}

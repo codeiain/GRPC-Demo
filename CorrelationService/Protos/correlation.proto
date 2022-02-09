@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option csharp_namespace = "CorrelationService";
+
+package correlation;
+
+import "Protos/weather.proto";
+import "Protos/stock.proto";
+
+// The greeting service definition.
+service Correlation {
+  // Sends a greeting
+  rpc GetWeatherAndStock (CorrelationRequest) returns (CorrelationReply);
+}
+
+// The request message containing the user's name.
+message CorrelationRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message CorrelationReply {
+  stocks.StockReply stock = 1;
+  weather.WeatherReply weather = 2;
+}
+
